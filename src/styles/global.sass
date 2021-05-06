@@ -1,0 +1,41 @@
+@import "reset"
+
+body::-webkit-scrollbar
+  width: 10px
+
+body::-webkit-scrollbar-thumb
+  background-color: $corporate
+  border-radius: 5px
+
+@-webkit-keyframes DynamicGradient
+  0%
+    background-position: 28% 0
+  50%
+    background-position: 73% 100%
+  100%
+    background-position: 28% 0
+
+.gb-gradient-button
+  margin: 0 auto 0
+  width: 200px
+  height: 50px
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 40px
+  color: $white
+  background: linear-gradient(139deg, $white, $corporate)
+  background-size: 400% 400%
+  -webkit-animation: DynamicGradient 10s ease infinite
+  -moz-animation: DynamicGradient 10s ease infinite
+  animation: DynamicGradient 10s ease infinite
+
+.gb-author-avatar-anonymous
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 50px
+  width: 50px
+  border-radius: 50%
+  background-color: #ddd
+  font-size: 25px

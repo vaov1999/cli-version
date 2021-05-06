@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Card 1",
+    "type": "CONTAINER_CARD",
+    "title": "Card 1 content",
+    "sub_cards": [
+      {
+        "id": 1,
+        "name": "Image Card",
+        "type": "IMAGE_CARD",
+        "source": "https://images.unsplash.com/photo-1618421770676-356cce7a9c9d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+      },
+      {
+        "id": 2,
+        "name": "Card 2",
+        "type": "TEXT_CARD",
+        "source": "Container second card content"
+      },
+      {
+        "id": 3,
+        "name": "Card 2",
+        "type": "TEXT_CARD"
+      },
+      {
+        "id": 4,
+        "name": "Just do it",
+        "type": "TEXT_CARD"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Card 2",
+    "type": "IMAGE_CARD",
+    "source": "https://images.unsplash.com/photo-1543269664-76bc3997d9ea?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Card 2",
+    "type": "IMAGE_CARD",
+    "source": "https://imaes.unsplash.com/photo-1543269664-76bc3997d9ea?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Card 3",
+    "type": "TEXT_CARD",
+    "content": "Card 3 Content"
+  }
+]

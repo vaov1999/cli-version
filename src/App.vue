@@ -1,30 +1,39 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="app">
+    <div class="app__navigation">
+      <router-link class="link" to="/">Posts</router-link>
+      <router-link class="link" to="/cards">Cards</router-link>
+    </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="sass">
+@import "@/styles/global.sass";
+</style>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style lang="sass">
+.app
+  &__navigation
+    max-width: 400px
+    height: 50px
+    margin: 0 auto
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 30px
+    padding: 20px 20px 0
+    .link
+      padding: 10px
+      font-size: 15px
+      border-radius: 20px
+      box-shadow: 0 0 10px rgba($black, .1)
+      display: flex
+      justify-content: center
+      align-items: center
+      text-decoration: none
+      text-align: center
+      text-transform: capitalize
+      color: $black
+    .router-link-exact-active
+      box-shadow: 0 0 20px rgba($corporate, .5)
 </style>

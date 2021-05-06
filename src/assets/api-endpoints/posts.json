@@ -1,0 +1,85 @@
+[
+  {
+    "id": "post1",
+    "title": "Routing",
+    "link": "https://nuxtjs.org/docs/2.x/get-started/routing",
+    "content": "Most websites will have more than one page (i.e. a home page, about page, contact page etc.). In order to show these pages, we need a Router. That's where vue-router comes in. When working with the Vue application, you have to set up a configuration file (i.e. router.js) and add all your routes manually to it. Nuxt.js automatically generates the vue-router configuration for you, based on your provided Vue files inside the pages directory. That means you never have to write a router config again! Nuxt.js also gives you automatic code-splitting for all your routes.",
+    "author": {
+      "id": "asd213",
+      "name": "John Smith",
+      "username": "john_smith",
+      "avatar": "https://cdn.britannica.com/81/82281-050-3ADDC3DB/John-Smith-engraving.jpg"
+    }
+  },
+  {
+    "id": "asdasdasdasdasd",
+    "title": "Commands and Deployment",
+    "link": "https://nuxtjs.org/docs/2.x/get-started/commands",
+    "content": "Nuxt.js will create a dist/ directory with everything inside ready to be deployed on a static hosting service. As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command nuxt generate based on those links.",
+    "author": {
+      "id": "asd213",
+      "name": "John Smith",
+      "username": "john_smith",
+      "avatar": "https://cdn.britannica.com/81/82281-050-3ADDC3DB/John-Smith-engraving.jpg"
+    }
+  },
+  {
+    "id": "123123",
+    "title": "Context and Helpers",
+    "link": "https://nuxtjs.org/docs/2.x/concepts/context-helpers",
+    "content": "First and foremost, the context is used to provide access to other parts of the Nuxt.js application, e.g. the Vuex store or the underlying connect instance. Thus, we have the req and res objects in the context available on the server side and store always available. But with time, the context was extended with many other helpful variables and shortcuts. Now we have access to HMR functionalities in development mode, the current route, page params and query, as well as the option to access environment variables through the context. Furthermore, module functions and helpers can be exposed through the context to be available on both - the client and the server side.",
+    "author": {
+      "id": "namsasd123123e",
+      "name": "Albert Einstein",
+      "username": "albert_einstein",
+      "avatar": "https://www.biography.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5ODc5NjY5ODU0NjQzMzIy/gettyimages-3091504.jpg"
+    }
+  },
+  {
+    "id": "asd",
+    "title": "Directory Structure",
+    "link": "https://nuxtjs.org/docs/2.x/get-started/directory-structure",
+    "content": "The components directory is where you put all your Vue.js components which are then imported into your pages.With Nuxt.js you can create your components and auto import them into your .vue files meaning there is no need to manually import them in the script section. Nuxt.js will scan and auto import these for you once you have components set to true.",
+    "author": {
+      "id": "asd213",
+      "name": "John Smith",
+      "username": "john_smith",
+      "avatar": "https://cdn.britannica.com/81/82281-050-3ADDC3DB/John-Smith-engraving.jpg"
+    }
+  },
+  {
+    "id": "cjvnjslfvdj12",
+    "title": "Server Side Rendering",
+    "link": "https://nuxtjs.org/docs/2.x/concepts/server-side-rendering",
+    "content": "Server-side rendering (SSR), is the ability of an application to contribute by displaying the web-page on the server instead of rendering it in the browser. Server-side sends a fully rendered page to the client; the client's JavaScript bundle takes over which then allows the Vue.js app to hydrate.",
+    "author": {
+      "id": "nam123123dasdasde",
+      "name": "Some Dude",
+      "username": "user123123123"
+    }
+  },
+  {
+    "id": "123dasda121",
+    "title": "Views",
+    "link": "https://nuxtjs.org/docs/2.x/concepts/views",
+    "content": "The Views section describes all you need to know to configure data and views for a specific route in your Nuxt.js Application. Views consist of an app template, a layout, and the actual page. In addition, you can define custom meta tags for the head section of each page which are important for SEO (Search Engine Optimization).",
+    "author": {
+      "id": "namsasd123123e",
+      "name": "Albert Einstein",
+      "username": "albert_einstein",
+      "avatar": "https://www.biography.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5ODc5NjY5ODU0NjQzMzIy/gettyimages-3091504.jpg"
+    }
+  },
+  {
+    "id": "adkjnvahjfvsnk12",
+    "title": "Static Site Generation",
+    "link": "https://nuxtjs.org/docs/2.x/concepts/static-site-generation",
+    "content": "With static site generation you can render your application during the build phase and deploy it to any static hosting services such as Netlify, GitHub pages, Vercel etc. This means that no server is needed in order to deploy your application.",
+    "author": {
+      "id": "n123123ame",
+      "name": "Stephen Hawking",
+      "username": "stephen_hawking",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRvl9sAAH-yXAze7V6uKXTtWuf2v29DU1YELARJuGfeGaQ-QE_P"
+    }
+  }
+]
