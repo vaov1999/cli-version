@@ -74,7 +74,7 @@ import posts from "@/assets/api-endpoints/posts.json";
 import { IPosts, IAuthorsGroups } from "@/interfaces/index.interface";
 
 interface IComponentData {
-  posts: Array<IPosts>;
+  posts: IPosts[];
   isGroupByAuthor: boolean;
 }
 
@@ -87,7 +87,7 @@ export default defineComponent({
     };
   },
   computed: {
-    authorsGroups(): IAuthorsGroups {
+    authorsGroups(): IAuthorsGroups[] {
       const AUTHORS: string[] = [];
 
       this.posts.forEach((post) => {
@@ -96,22 +96,19 @@ export default defineComponent({
         }
       });
 
-      const GROUPS: IAuthorsGroups | any[] = [];
+      const GROUPS: IAuthorsGroups[] = [];
 
       AUTHORS.forEach((author) => {
         GROUPS.push({ authorId: author, authorPosts: [] });
       });
 
       this.posts.forEach((post) => {
-        GROUPS.forEach((group: IAuthorsGroups) => {
+        GROUPS.forEach((group) => {
           if (post.author.id === group.authorId && group.authorPosts) {
             group.authorPosts.push(post);
           }
         });
       });
-
-      console.log(GROUPS);
-      console.log(this.posts);
 
       return GROUPS;
     },

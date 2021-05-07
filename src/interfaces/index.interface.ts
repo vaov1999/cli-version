@@ -13,5 +13,5 @@ export interface IPosts {
 
 export interface IAuthorsGroups {
   authorId: string;
-  authorPosts: Array<IPosts>;
+  authorPosts: IPosts[];
 }
