@@ -1,11 +1,11 @@
 <template>
   <div class="posts">
     <button class="gb-gradient-button" @click="filterToggle">
-      {{ isSortByAuthor ? "All posts" : "Sort by author" }}
+      {{ isGroupByAuthor ? "All posts" : "Group by author" }}
     </button>
     <div
       v-for="(author, index) in authorsGroups"
-      v-show="isSortByAuthor"
+      v-show="isGroupByAuthor"
       :key="index"
       class="posts__grouped"
     >
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div v-show="!isSortByAuthor" class="posts__mixed">
+    <div v-show="!isGroupByAuthor" class="posts__mixed">
       <div v-for="(post, index) in posts" :key="index" class="item">
         <p class="title" v-html="post.title" />
         <div class="author">
@@ -70,35 +70,24 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import posts from "@/assets/api-endpoints/posts.json";
-interface Posts {
-  posts: {
-    id: string;
-    title: string;
-    content?: string;
-    link: string;
-    author: {
-      id: string;
-      name: string;
-      username: string;
-      avatar?: string;
-    };
-  }[];
-  authorsGroups?: {
-    authorId: string;
-    authorPosts?: Posts["posts"];
-  }[];
-  isSortByAuthor: boolean;
+
+import { IPosts, IAuthorsGroups } from "@/interfaces/index.interface";
+
+interface IComponentData {
+  posts: Array<IPosts>;
+  isGroupByAuthor: boolean;
 }
+
 export default defineComponent({
   name: "Posts",
-  data(): Posts {
+  data(): IComponentData {
     return {
       posts,
-      isSortByAuthor: false,
+      isGroupByAuthor: false,
     };
   },
   computed: {
-    authorsGroups(): any {
+    authorsGroups(): IAuthorsGroups {
       const AUTHORS: string[] = [];
 
       this.posts.forEach((post) => {
@@ -107,26 +96,29 @@ export default defineComponent({
         }
       });
 
-      const GROUPS: Posts["authorsGroups"] | any = [];
+      const GROUPS: IAuthorsGroups | any[] = [];
 
       AUTHORS.forEach((author) => {
-        GROUPS?.push({ authorId: author, authorPosts: [] });
+        GROUPS.push({ authorId: author, authorPosts: [] });
       });
 
-      this?.posts?.forEach((post) => {
-        GROUPS?.forEach((group: any) => {
-          if (post.author.id === group.authorId) {
-            group?.authorPosts?.push(post);
+      this.posts.forEach((post) => {
+        GROUPS.forEach((group: IAuthorsGroups) => {
+          if (post.author.id === group.authorId && group.authorPosts) {
+            group.authorPosts.push(post);
           }
         });
       });
+
+      console.log(GROUPS);
+      console.log(this.posts);
 
       return GROUPS;
     },
   },
   methods: {
     filterToggle() {
-      this.isSortByAuthor = !this.isSortByAuthor;
+      this.isGroupByAuthor = !this.isGroupByAuthor;
     },
   },
 });

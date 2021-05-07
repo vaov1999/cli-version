@@ -27,7 +27,7 @@ export default defineComponent({
     },
   },
   methods: {
-    defineComponent(currentComponent: any) {
+    defineComponent(currentComponent: string) {
       switch (currentComponent) {
         case "IMAGE_CARD":
           return CardImage;

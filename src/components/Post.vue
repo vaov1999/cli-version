@@ -21,7 +21,7 @@ import POSTS from "@/assets/api-endpoints/posts.json";
 export default defineComponent({
   computed: {
     post() {
-      const POST = POSTS.filter((post: any) => {
+      const POST = POSTS.filter((post) => {
         return post.id === this.$route.params.id;
       });
       return POST[0];
