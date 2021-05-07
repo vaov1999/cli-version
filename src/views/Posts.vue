@@ -104,7 +104,7 @@ export default defineComponent({
 
       this.posts.forEach((post) => {
         GROUPS.forEach((group) => {
-          if (post.author.id === group.authorId && group.authorPosts) {
+          if (post.author.id === group.authorId) {
             group.authorPosts.push(post);
           }
         });

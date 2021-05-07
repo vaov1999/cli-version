@@ -32,25 +32,15 @@ import CardText from "@/components/CardText.vue";
 import cards from "@/assets/api-endpoints/cards.json";
 import { defineComponent } from "vue";
 
-interface Data {
-  cards: {
-    id: number;
-    name: string;
-    type: string;
-    title?: string;
-    source?: string;
-    content?: string;
-    sub_cards?: {
-      id: number;
-      name: string;
-      type: string;
-      source?: string;
-    }[];
-  }[];
+import { ICards } from "@/interfaces/index.interface";
+
+interface IComponentData {
+  cards: ICards[];
 }
+
 export default defineComponent({
   components: { CardsContainer, CardImage, CardText },
-  data(): Data {
+  data(): IComponentData {
     return {
       cards,
     };
@@ -69,7 +59,7 @@ export default defineComponent({
     },
   },
   methods: {
-    defineComponent(currentComponent: string): any {
+    defineComponent(currentComponent: string) {
       switch (currentComponent) {
         case "CONTAINER_CARD":
           return CardsContainer;

@@ -35,6 +35,7 @@ export default defineComponent({
     max-width: 100%
     max-height: 300px
     object-fit: cover
+    border-radius: 10px
   &__title
     font-size: 20px
     line-height: 150%
